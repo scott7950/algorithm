@@ -24,6 +24,15 @@ int main(int argc, char* argv[]) {
     //puts the string literal "Hello world" in read-only parts of memory, 
     //creates an array s by allocating memory on the stack and copies the string literal to the newly allocated memory, 
     //making any writing operation on s legal.
+    
+    //Example:                       Allocation Type:     Read/Write:    Storage Location:   Memory Used (Bytes):
+    //===========================================================================================================
+    //const char* str = "Stack";     Static               Read-only      Code segment        6 (5 chars plus '\0')
+    //char* str = "Stack";           Static               Read-only      Code segment        6 (5 chars plus '\0')
+    //char* str = malloc(...);       Dynamic              Read-write     Heap                Amount passed to malloc
+    //char str[] = "Stack";          Static               Read-write     Stack               6 (5 chars plus '\0')
+    //char strGlobal[10] = "Global"; Static               Read-write     Data Segment (R/W)  10
+
     char str1[] = "Hello World";
     char str2[] = "HelloWorld";
     char str3[] = "";
